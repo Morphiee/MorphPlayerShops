@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MorphPlayerShops">
+    <output-path>$USER_HOME$/Desktop/EclipseTestPlugins/plugins</output-path>
+    <root id="archive" name="MorphPlayerShops.jar">
+      <element id="module-output" name="MorphPlayerShops" />
+    </root>
+  </artifact>
+</component>
