@@ -4,9 +4,12 @@ import jdk.nashorn.internal.objects.annotations.Getter;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
+import net.naturva.morphie.mps.events.PlayerDataEvent;
 import net.naturva.morphie.mps.files.Messages;
 import net.naturva.morphie.mps.util.MessageMethods;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,7 +24,10 @@ public class MorphPlayerShops extends JavaPlugin {
     private static Permission perms = null;
     private static Chat chat = null;
 
+    PluginManager pm = Bukkit.getServer().getPluginManager();
+
     public void onEnable() {
+        pm.registerEvents(new PlayerDataEvent(this), this);
         getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾"));
         getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&3MorphPlayerShops &8- &a" + this.version));
         loadConfigManager();

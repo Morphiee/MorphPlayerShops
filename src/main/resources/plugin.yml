@@ -4,3 +4,4 @@ version: 2.0.0
 main: net.naturva.morphie.mps.MorphPlayerShops
 author: Morphie
 api-version: 1.13
+depend: [Vault]
