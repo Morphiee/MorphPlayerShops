@@ -7,6 +7,7 @@ import net.milkbowl.vault.permission.Permission;
 import net.naturva.morphie.mps.events.PlayerDataEvent;
 import net.naturva.morphie.mps.files.Messages;
 import net.naturva.morphie.mps.util.MessageMethods;
+import net.naturva.morphie.mps.util.playerdata.PlayerDataCleaner;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
@@ -48,6 +49,11 @@ public class MorphPlayerShops extends JavaPlugin {
         getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&3Permissions&8: &aVault Found."));
         getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&3Chat&8: &aVault Found."));
         getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&3Plugin Status&8: &aEnabled!"));
+        if (this.getConfig().getBoolean("Settings.AutoDeletePlayerFiles.Enabled") == true) {
+            getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', " "));
+            getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&3PlayerData Cleaner&8: &aChecking for old files."));
+            new PlayerDataCleaner(this).cleanPlayerData();
+        }
         getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', " "));
         getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾"));
 
