@@ -5,3 +5,8 @@ main: net.naturva.morphie.mps.MorphPlayerShops
 author: Morphie
 api-version: 1.13
 depend: [Vault]
+commands:
+  ms:
+    description: Main command for the MorphPlayerShops plugin!
+    usage: /<command>
+    aliases: [mshops, ps, pshops]
