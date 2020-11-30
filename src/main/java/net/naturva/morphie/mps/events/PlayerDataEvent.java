@@ -37,6 +37,7 @@ public class PlayerDataEvent implements Listener {
                     pd.set("PlayerData.Locked", Boolean.valueOf(false));
                     pd.set("PlayerData.CurrentTag", String.valueOf(plugin.getConfig().getString("Tags.DefaultTag")));
                     pd.set("PlayerData.Lore", null);
+                    pd.set("PlayerData.ShopLocation", null);
                     pd.set("Stats.ShopVisits", Integer.valueOf(0));
                     try {
                         pd.save(file);

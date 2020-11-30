@@ -133,4 +133,9 @@ public class MorphPlayerShops extends JavaPlugin {
     public String getVersion() {
         return version;
     }
+
+    @Getter
+    public Economy getEcon() {
+        return econ;
+    }
 }

@@ -129,6 +129,7 @@ public class Messages {
 
                 this.messagesCFG.addDefault("SetShop.Message", "&7Your shop has been successfully created!");
                 this.messagesCFG.addDefault("SetShop.ConfirmMessage", "&7Type &a/ps set &7again to confirm!");
+                this.messagesCFG.addDefault("SetShop.ConfirmMessage", "&7Set shop confirmation timed out! Type &a/ps set &7to set your shop.");
                 this.messagesCFG.addDefault("SetShop.ConfirmPriceMessage", "&7Type &a/ps set &7again to confirm! This will cost&8: &aCOST");
 
                 this.messagesCFG.addDefault("ToShopMessage", "&7Teleporting to &aPLAYER's &7shop.");

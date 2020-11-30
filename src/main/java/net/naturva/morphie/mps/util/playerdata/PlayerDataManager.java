@@ -17,8 +17,8 @@ public class PlayerDataManager {
         this.plugin = plugin;
     }
 
-    public void setBoolean(Player player, UUID uuid, String string, Boolean b) {
-        File file = getPlayerFile(player.getUniqueId());
+    public void setBoolean(UUID uuid, String string, Boolean b) {
+        File file = getPlayerFile(uuid);
         FileConfiguration fc = YamlConfiguration.loadConfiguration(file);
         fc.set(string, Boolean.valueOf(b));
         try
@@ -31,8 +31,8 @@ public class PlayerDataManager {
         }
     }
 
-    public void setString(Player player, UUID uuid, String string, String string2) {
-        File file = getPlayerFile(player.getUniqueId());
+    public void setString(UUID uuid, String string, String string2) {
+        File file = getPlayerFile(uuid);
         FileConfiguration fc = YamlConfiguration.loadConfiguration(file);
         fc.set(string, String.valueOf(string2));
         try
@@ -45,8 +45,8 @@ public class PlayerDataManager {
         }
     }
 
-    public void removeShop(Player player, UUID uuid) {
-        File file = getPlayerFile(player.getUniqueId());
+    public void removeShop(UUID uuid) {
+        File file = getPlayerFile(uuid);
         FileConfiguration fc = YamlConfiguration.loadConfiguration(file);
         fc.set("PlayerData.location", null);;
         try
@@ -59,10 +59,10 @@ public class PlayerDataManager {
         }
     }
 
-    public void addLore(Player player, UUID uuid, String string, String lore) {
-        File file = getPlayerFile(player.getUniqueId());
+    public void addStringList(UUID uuid, String string, String lore) {
+        File file = getPlayerFile(uuid);
         FileConfiguration fc = YamlConfiguration.loadConfiguration(file);
-        List<String> list2 = getStringList(player.getUniqueId(), string);
+        List<String> list2 = getStringList(uuid, string);
         list2.add(lore);
         fc.set(string, list2);
         try
@@ -75,7 +75,7 @@ public class PlayerDataManager {
         }
     }
 
-    public void setLore(Player player, UUID uuid, String string, List<String> lore) {
+    public void setStringList(Player player, UUID uuid, String string, List<String> lore) {
         File file = getPlayerFile(player.getUniqueId());
         FileConfiguration fc = YamlConfiguration.loadConfiguration(file);
         fc.set(string, lore);
@@ -89,8 +89,8 @@ public class PlayerDataManager {
         }
     }
 
-    public void setDouble(Player player, UUID uuid, String string, Double i) {
-        File file = getPlayerFile(player.getUniqueId());
+    public void setDouble(UUID uuid, String string, Double i) {
+        File file = getPlayerFile(uuid);
         FileConfiguration fc = YamlConfiguration.loadConfiguration(file);
         fc.set(string, Double.valueOf(i));
         try
@@ -103,8 +103,8 @@ public class PlayerDataManager {
         }
     }
 
-    public void setFloat(Player player, UUID uuid, String string, Float i) {
-        File file = getPlayerFile(player.getUniqueId());
+    public void setFloat(UUID uuid, String string, Float i) {
+        File file = getPlayerFile(uuid);
         FileConfiguration fc = YamlConfiguration.loadConfiguration(file);
         fc.set(string, Float.valueOf(i));
         try

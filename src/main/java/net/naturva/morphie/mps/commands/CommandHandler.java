@@ -27,6 +27,15 @@ public class CommandHandler implements CommandExecutor {
                     sender.sendMessage(MessageMethods.addColor(new MessageMethods(plugin).getMessage("ErrorPrefix") + " &cThis command can only be run by a player!"));
                 }
                 return true;
+            } else if (args[0].equalsIgnoreCase("set")) {
+                // Player Only
+                if (sender instanceof Player) {
+                    Player player = (Player) sender;
+                    new HelpCommand(plugin).runHelp(player);
+                } else {
+                    sender.sendMessage(MessageMethods.addColor(new MessageMethods(plugin).getMessage("ErrorPrefix") + " &cThis command can only be run by a player!"));
+                }
+                return true;
             } else {
                 sender.sendMessage(MessageMethods.addColor(new MessageMethods(plugin).getMessage("ErrorPrefix") + new MessageMethods(plugin).getMessage("InvalidArgsMessage")));
                 return true;
